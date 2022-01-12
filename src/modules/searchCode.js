@@ -9,6 +9,7 @@ const searchCode = () => {
         let apiFetchResult;
         ajaxService(searchValue)
             .then((result) => (apiFetchResult = result))
+            .then(() => console.log("Maisto rezultatai: ", apiFetchResult))
             .then(() => {
                 if (apiFetchResult.meals !== null) {
                     render(apiFetchResult.meals[0]);
